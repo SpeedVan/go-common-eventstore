@@ -136,3 +136,13 @@ func (s *Client) AppendToStreamAsync(
 ) (*tasks.Task, error) {
 	return s.EsClient.AppendToStreamAsync(stream, expectedVersion, events, userCredentials)
 }
+
+// SubscribeToAllAsync todo
+func (s *Client) SubscribeToAllAsync(
+	resolveLinkTos bool,
+	eventAppeared client.EventAppearedHandler,
+	subscriptionDropped client.SubscriptionDroppedHandler,
+	userCredentials *client.UserCredentials,
+) (*tasks.Task, error) {
+	return s.EsClient.SubscribeToAllAsync(resolveLinkTos, eventAppeared, subscriptionDropped, userCredentials)
+}
